@@ -10,6 +10,7 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.content === "!quote") {
         message.channel.send(messages[randomIndex]);
+        console.log(messages[randomIndex])
     }
     if (message.content === "Hello") {
         message.channel.send('Hello, my name is Tommy and I am a fucking shit mid laner.');
