@@ -31,6 +31,10 @@ client.on('message', message => {
         message.react('😄');
         message.channel.send("That's not even fun.")
     }
+
+    if (message.content == "!react") {
+        message.react('😄');
+    }
     console.log(message.content);
 });
 
