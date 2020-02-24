@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const messages = ['Che schifo di champ', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed'];
+const messages = ['Che schifo di champ', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed', 'I do not need Support items', 'I am not drunk', 'Alessaaaaaaaaa', 'Guys, your BOT is MID!!!', 'DO NOT FARM MY MINIONS!!!!', 'DO NOT PUSH MY LANEEE!!!', 'I just woke up', 'HE IS FULL LIFE!!!'];
 
 client.on('ready', () => {
     console.log('I am ready!');
