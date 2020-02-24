@@ -8,8 +8,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === "!quote") {
-        let randomIndex = Math.round(Math.random()*messages.length);
-        message.channel.send(messages[randomIndex]);
+        message.channel.send(messages[Math.round(Math.random()*messages.length)]);
         console.log(messages[randomIndex])
     }
     if (message.content === "Hello") {
