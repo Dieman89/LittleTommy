@@ -1,11 +1,16 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const messages = ['Che schifo di champ', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed'];
+const randomIndex = Math.round(Math.random()*messages.length);
 
 client.on('ready', () => {
     console.log('I am ready!');
 });
 
 client.on('message', message => {
+    if (message.content === "!quote") {
+        message.content.send(messages[randomIndex]);
+    }
     if (message.content === "Hello") {
         message.channel.send('Hello, my name is Tommy and I am a fucking shit mid laner.');
     }
