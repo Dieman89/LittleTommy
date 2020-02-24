@@ -9,7 +9,7 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.content === "!quote") {
        // message.channel.send(messages[Math.round(Math.random()*messages.length)]);
-       let random = Math.floor((Math.random() * messages.length) + 1);
+       let random = Math.floor((Math.random() * messages.length));
        message.channel.send(messages[random]);
        console.log(random);
     }
