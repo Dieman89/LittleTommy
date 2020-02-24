@@ -1,13 +1,25 @@
 {
-    "name": "littletommy",
-    "description": "Tommy",
-    "version": "0.0.0",
-    "main": "bot.js",
-    "scripts": {
-        "start": "node bot.js"
-    },
-    "dependencies": {
-        "discord.js": "11.5.1",
-        "request": "2.88.2"
-    }
+  "name": "littletommy",
+  "description": "Tommy",
+  "version": "0.0.0",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "request": "2.88.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dieman89/LittleTommy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dieman89/LittleTommy/issues"
+  },
+  "homepage": "https://github.com/Dieman89/LittleTommy#readme"
 }
