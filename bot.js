@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const messages = ['Che schifo di champ', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed', 'I do not need Support items', 'I am not drunk', 'Alessaaaaaaaaa', 'Guys, your BOT is MID!!!', 'DO NOT FARM MY MINIONS!!!!', 'DO NOT PUSH MY LANEEE!!!', 'I just woke up', 'HE IS FULL LIFE!!!'];
+const messages = ['Che schifo di champ', 'Snipered!', 'We need to do fucking JAVA COURSEWORK', 'I will fist your pussy', 'I was predicting.', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed', 'I do not need Support items', 'I am not drunk', 'Alessaaaaaaaaa', 'Guys, your BOT is MID!!!', 'DO NOT FARM MY MINIONS!!!!', 'DO NOT PUSH MY LANEEE!!!', 'I just woke up', 'HE IS FULL LIFE!!!'];
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -8,7 +8,6 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === "!quote") {
-       // message.channel.send(messages[Math.round(Math.random()*messages.length)]);
        let random = Math.floor((Math.random() * messages.length));
        message.channel.send(messages[random]);
        console.log(random);
@@ -38,6 +37,8 @@ client.on('message', message => {
         message.react('😄');
         message.channel.send("That's not even fun.")
     }
+
+    
 
     if (message.content == "!react") {
         message.react('😄');
