@@ -46,7 +46,7 @@ client.on('guildMemberAdd', async member => {
 
 client.on('message', async message => {
     if (message.content === "!join!") {
-        client.emit('guildMemberAdd', message.member);
+        client.emit('guildMemberAdd', message.member).then(console.log).catch(console.error);
     }
 });
 
