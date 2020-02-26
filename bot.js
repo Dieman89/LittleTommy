@@ -39,7 +39,7 @@ client.on('guildMemberAdd', async member => {
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL);
     ctx.drawImage(avatar, 25, 0, 200, canvas.height - 50)
 
-    const attachment = new Discord.Attachment(canvas.toBuffer(), 'welcome-image.png')
+    const attachment = new Discord.Attachment(canvas.toBuffer(), './background.jpg')
 
     message.channel.send(`Welcome to the server, ${member}. My name is Little Tommy and I am a real clone of the legendary Tommy. The most terrible player you will ever see!`, attachment);
 });
