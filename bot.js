@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const Canvas = require('canvas');
 const client = new Discord.Client();
 const messages = ['Che schifo di champ', 'Snipered!', 'We need to do fucking JAVA COURSEWORK', 'I will fist your pussy', 'I was predicting.', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed', 'I do not need Support items', 'I am not drunk', 'Alessaaaaaaaaa', 'Guys, your BOT is MID!!!', 'DO NOT FARM MY MINIONS!!!!', 'DO NOT PUSH MY LANEEE!!!', 'I just woke up', 'HE IS FULL LIFE!!!'];
 
@@ -16,7 +17,7 @@ const applyText = (canvas, text) => {
 }
 
 client.on('guildMemberAdd', async member => {
-    const channel = member.guild.channels.find(ch => ch.name === 'member-log');
+    const channel = member.guild.channels.find(ch => ch.name === 'general');
     if (!channel) return;
     const canvas = Canvas.createCanvas(700, 250);
     const ctx = canvas.getContext('2d');
