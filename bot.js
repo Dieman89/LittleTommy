@@ -41,7 +41,7 @@ client.on('guildMemberAdd', async member => {
 
     const attachment = new Discord.Attachment(canvas.toBuffer(), 'welcome-image.png')
 
-    channel.send(`Welcome to the server, ${member}. My name is Little Tommy and I am a real clone of the legendary Tommy. The most terrible player you will ever see!`, attachment);
+    message.channel.send(`Welcome to the server, ${member}. My name is Little Tommy and I am a real clone of the legendary Tommy. The most terrible player you will ever see!`, attachment);
 });
 
 client.on('message', async message => {
