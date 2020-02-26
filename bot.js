@@ -24,9 +24,9 @@ client.on('guildMemberAdd', async member => {
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     ctx.strokeStyle = '#74037b';
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
-ctx.font = '28px sans-serif';
-ctx.fillStyle = '#ffffff';
-ctx.fillText('Welcome to the server', canvas.width / 2.5, canvas.height / 1.8);
+    ctx.font = '28px sans-serif';
+    ctx.fillStyle = '#ffffff';
+    ctx.fillText('Welcome to the server', canvas.width / 2.5, canvas.height / 1.8);
     ctx.font = applyText(canvas, member.displayName);
     ctx.fillStyle = '#ffffff';
     ctx.fillText(member.displayName, canvas.width / 2.5, canvas.height / 1.8);
@@ -45,7 +45,7 @@ ctx.fillText('Welcome to the server', canvas.width / 2.5, canvas.height / 1.8);
 });
 
 client.on('message', async message => {
-    if (message.content === "!join") {
+    if (message.content === "!join!") {
         client.emit('guildMemberAdd', message.member || await message.guild.guild.fetchMember(message.author));
     }
 });
