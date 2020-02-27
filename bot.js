@@ -2,7 +2,7 @@ const { Client, RichEmbed } = require('discord.js');
 const fetch = require('node-fetch');
 const colors = require('./colors.json');
 const client = new Client();
-const messages = ['Che schifo di champ', 'Snipered!', 'We need to do fucking JAVA COURSEWORK', 'I will fist your pussy', 'I was predicting.', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed', 'I do not need Support items', 'I am not drunk', 'Alessaaaaaaaaa', 'Guys, your BOT is MID!!!', 'DO NOT FARM MY MINIONS!!!!', 'DO NOT PUSH MY LANEEE!!!', 'I just woke up', 'HE IS FULL LIFE!!!'];
+const quotes = ['Che schifo di champ', 'Snipered!', 'We need to do fucking JAVA COURSEWORK', 'I will fist your pussy', 'I was predicting.', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed', 'I do not need Support items', 'I am not drunk', 'Alessaaaaaaaaa', 'Guys, your BOT is MID!!!', 'DO NOT FARM MY MINIONS!!!!', 'DO NOT PUSH MY LANEEE!!!', 'I just woke up', 'HE IS FULL LIFE!!!'];
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -17,10 +17,10 @@ if (messages.content === "!dog") {
      if(!{message}) return messages.channel.send("I am a little broken Tommy. Try again.")
        let embed = new RichEmbed()
         .setColor(colors.pink)
-        .setAuthor('Tommy loves Dogs', null)
+        .setAuthor('Tommy loves Dogs', messages.guild.iconURL)
         .setImage(message)
         .setTimestamp()
-        .setFooter(`The best of Tommy`, null)
+        .setFooter(`The best of Tommy`, bot.user.displayAvatarURL)
 
     messages.channel.send(embed);
     msg.delete(); 
@@ -46,8 +46,8 @@ if (messages.content === "!cat") {
 
 client.on('message', message => {
     if (message.content === "!quote") {
-       let random = Math.floor((Math.random() * messages.length));
-       message.channel.send(messages[random]);
+       let random = Math.floor((Math.random() * quotes.length));
+       message.channel.send(quotes[random]);
        console.log(random);
     }
     if (message.content === "Hello") {
