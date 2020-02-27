@@ -17,9 +17,11 @@ if (messages.content === "!dog") {
      if(!{message}) return messages.channel.send("I am a little broken Tommy. Try again.")
        let embed = new RichEmbed()
         .setColor(colors.pink)
-        .setAuthor('Tommy loves Dogs', messages.guild.iconURL)
+        .setAuthor('Tommy loves Dogs', null)
         .setImage(message)
         .setTimestamp()
+        .setFooter(`Tommy the Best`, null)
+
     messages.channel.send(embed);
     msg.delete(); 
 }
