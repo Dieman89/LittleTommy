@@ -8,8 +8,11 @@
   },
   "dependencies": {
     "canvas": "^2.6.1",
+    "colors": "^1.4.0",
+    "colours": "^0.6.0-2",
     "discord.js": "^11.5.1",
-    "request": "2.88.2"
+    "request": "2.88.2",
+    "superagent": "^5.2.2"
   },
   "devDependencies": {},
   "repository": {

@@ -1,10 +1,31 @@
 const Discord = require('discord.js');
 const Canvas = require('canvas');
+const superagent = require('superagent');
+const colours = require('./colours.json');
 const client = new Discord.Client();
 const messages = ['Che schifo di champ', 'Snipered!', 'We need to do fucking JAVA COURSEWORK', 'I will fist your pussy', 'I was predicting.', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed', 'I do not need Support items', 'I am not drunk', 'Alessaaaaaaaaa', 'Guys, your BOT is MID!!!', 'DO NOT FARM MY MINIONS!!!!', 'DO NOT PUSH MY LANEEE!!!', 'I just woke up', 'HE IS FULL LIFE!!!'];
 
 client.on('ready', () => {
     console.log('I am ready!');
+});
+
+client.on('message', async messages => {
+if (message === "!cat") {
+    let msg = await message.channel.send("Generating a cat meme for all you Tommy's followers");
+    
+    let {body} = await superagent
+    .get(`http://aws.random.cat/meow`)
+    console.log(body.file);
+    if(!{body}) return message.channel.send("I am a little broken Tommy. Try again.")
+        let cEmbed = new Discord.RichEmbed()
+        .setColor(colours.cyan)
+        .setAuthor(`TestBot CATS!`, message.guild.iconURL)
+        .setImage(body.file)
+        .setTimestamp()
+        .setFooter(`TestBot`, bot.user.displayAvatarURL)
+        message.chat.send({embed: cEmbed});
+        msg.delete();
+}
 });
 
 const applyText = (canvas, text) => {
@@ -47,7 +68,7 @@ client.on('guildMemberAdd', async member => {
 
 client.on('message', async message => {
     if (message.content === "!join!") {
-        client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
+        client.emit('guildMemberAdd', message.member || await message.guild.fetchUser(message.author));
     }
 });
 
