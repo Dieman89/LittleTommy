@@ -17,10 +17,10 @@ if (messages.content === "!dog") {
      if(!{message}) return messages.channel.send("I am a little broken Tommy. Try again.")
        let embed = new RichEmbed()
         .setColor(colors.pink)
-        .setAuthor('Tommy loves Dogs', null)
+        .setAuthor('Tommy loves Dogs', messages.guild.iconURL)
         .setImage(message)
         .setTimestamp()
-        .setFooter(`The best of Tommy`, null)
+        .setFooter(`The best of Tommy`, bot.user.displayAvatarURL)
 
     messages.channel.send(embed);
     msg.delete(); 
