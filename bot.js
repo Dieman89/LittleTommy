@@ -14,13 +14,13 @@ if (message === "!cat") {
     let msg = await message.channel.send("Generating a cat meme for all you Tommy's followers");
     
     let {body} = await superagent
-    .get(`http://aws.random.cat/meow`)
-    console.log(body.file);
+    .get(`https://api.thecatapi.com/v1/images/search`)
+    console.log(body.url);
     if(!{body}) return message.channel.send("I am a little broken Tommy. Try again.")
         let cEmbed = new Discord.RichEmbed()
         .setColor(colors.pink)
         .setAuthor(`TestBot CATS!`, message.guild.iconURL)
-        .setImage(body.file)
+        .setImage(body.url)
         .setTimestamp()
         .setFooter(`TestBot`, bot.user.displayAvatarURL)
         message.chat.send({embed: cEmbed});
