@@ -10,7 +10,7 @@ client.on('ready', () => {
 
 client.on('message', async messages => {
 if (messages.content === "!dog") {
-    let msg = await messages.channel.send("Generating a cat meme for all you Tommy's followers");
+    let msg = await messages.channel.send("Generating a dog meme for all you Tommy's followers");
     
     let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
     console.log(message);
@@ -20,7 +20,23 @@ if (messages.content === "!dog") {
         .setAuthor('Tommy loves Dogs', null)
         .setImage(message)
         .setTimestamp()
-        .setFooter(`Tommy the Best`, null)
+        .setFooter(`The best of Tommy`, null)
+
+    messages.channel.send(embed);
+    msg.delete(); 
+}
+if (messages.content === "!cat") {
+    let msg = await messages.channel.send("Generating a cat meme for all you Tommy's followers");
+    
+    let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
+    console.log(message);
+     if(!{message}) return messages.channel.send("I am a little broken Tommy. Try again.")
+       let embed = new RichEmbed()
+        .setColor(colors.pink)
+        .setAuthor('Tommy loves Cats', messages.guild.iconURL)
+        .setImage(message)
+        .setTimestamp()
+        .setFooter(`The best of Tommy`, null)
 
     messages.channel.send(embed);
     msg.delete(); 
