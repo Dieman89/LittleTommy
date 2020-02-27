@@ -20,7 +20,7 @@ if (messages.content === "!dog") {
         .setAuthor('Tommy loves Dogs', messages.guild.iconURL)
         .setImage(message)
         .setTimestamp()
-        .setFooter(`The best of Tommy`, bot.user.displayAvatarURL)
+        .setFooter(`The best of Tommy`, client.user.displayAvatarURL)
 
     messages.channel.send(embed);
     msg.delete(); 
@@ -37,7 +37,7 @@ if (messages.content === "!cat") {
         .setAuthor('Tommy loves Cats', messages.guild.iconURL)
         .setImage(message)
         .setTimestamp()
-        .setFooter(`The best of Tommy`, bot.user.displayAvatarURL)
+        .setFooter(`The best of Tommy`, client.user.displayAvatarURL)
 
     messages.channel.send(embed);
     msg.delete(); 
