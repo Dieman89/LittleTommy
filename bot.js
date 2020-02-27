@@ -10,11 +10,11 @@ client.on('ready', () => {
 });
 
 client.on('message', async message => {
-if (message === "!cat") {
+if (message.content === "!cat") {
     let msg = await message.channel.send("Generating a cat meme for all you Tommy's followers");
     
     let {body} = await superagent
-    .get(`https://api.thecatapi.com/v1/images/search`)
+    .get(`https://api.thecatapi.com/v1/images/search`);
     console.log(body.url);
     if(!{body}) return message.channel.send("I am a little broken Tommy. Try again.")
         let cEmbed = new Discord.RichEmbed()
@@ -22,9 +22,9 @@ if (message === "!cat") {
         .setAuthor(`TestBot CATS!`, message.guild.iconURL)
         .setImage(body.url)
         .setTimestamp()
-        .setFooter(`TestBot`, bot.user.displayAvatarURL)
+        .setFooter(`TestBot`, bot.user.displayAvatarURL);
         message.chat.send({embed: cEmbed});
-        
+        msg.delete();
 }
 });
 
