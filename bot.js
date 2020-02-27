@@ -4,9 +4,9 @@ const colors = require('./colors.json');
 const client = new Client();
 const quotes = ['Che schifo di champ', 'Snipered!', 'We need to do fucking JAVA COURSEWORK', 'I will fist your pussy', 'I was predicting.', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed', 'I do not need Support items', 'I am not drunk', 'Alessaaaaaaaaa', 'Guys, your BOT is MID!!!', 'DO NOT FARM MY MINIONS!!!!', 'DO NOT PUSH MY LANEEE!!!', 'I just woke up', 'HE IS FULL LIFE!!!'];
 
-client.on('ready', () => {
+client.on('ready', async () => {
     console.log('I am ready!');
-    client.user.setActivity("Best MID", {type: "FEEDING", url:"https://tommyisbad.eu"})
+    client.user.setActivity("Best MID", {type: "FEEDING", url:"https://tommyisbad.eu"});
 });
 
 client.on('message', async messages => {
@@ -15,6 +15,8 @@ if (messages.content === "!dog") {
     
     let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
     console.log(message);
+    console.log(messages.guild.iconURL);
+    console.log(client.user.displayAvatarURL);
      if(!{message}) return messages.channel.send("I am a little broken Tommy. Try again.")
        let embed = new RichEmbed()
         .setColor(colors.pink)
