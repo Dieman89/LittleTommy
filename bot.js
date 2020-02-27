@@ -12,12 +12,12 @@ client.on('message', async message => {
 if (message.content === "!cat") {
     let msg = await message.channel.send("Generating a cat meme for all you Tommy's followers");
     
-    let { file } = await fetch('https://aws.random.cat/meow').then(response => response.json());
-    console.log(file);
+    let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
+    console.log(message);
     if(!{file}) return message.channel.send("I am a little broken Tommy. Try again.")
         let cEmbed = new Discord.RichEmbed()
         .setColor(colors.pink)
-        .setImage(file)
+        .setImage(message)
         .setTimestamp()
         message.chat.send({embed: cEmbed});
         msg.delete();
