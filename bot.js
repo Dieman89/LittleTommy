@@ -14,9 +14,10 @@ if (messages.content === "!dog") {
     
     let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
     console.log(message);
-    // if(!{message}) return message.channel.send("I am a little broken Tommy. Try again.")
+     if(!{message}) return messages.channel.send("I am a little broken Tommy. Try again.")
        let embed = new RichEmbed()
         .setColor(colors.pink)
+        .setAuthor('Tommy loves Dogs', messages.guild.iconURL)
         .setImage(message)
         .setTimestamp()
     messages.channel.send(embed);
