@@ -21,7 +21,6 @@ if (message.content === "!cat") {
         .setColor(colors.pink)
         .setImage(body.url)
         .setTimestamp()
-        .setFooter(`TestBot`, bot.user.displayAvatarURL);
         message.chat.send({embed: cEmbed});
         msg.delete();
 }
