@@ -2,6 +2,8 @@ const { Client, RichEmbed } = require('discord.js');
 const fetch = require('node-fetch');
 const colors = require('./colors.json');
 const client = new Client();
+const PexelsAPI = require('pexels-api-wrapper');
+var pexelsClient = new PexelsAPI("563492ad6f917000010000014c453ac665ac4258ad59547da9786552")
 const quotes = ['Che schifo di champ', 'Snipered!', 'We need to do fucking JAVA COURSEWORK', 'I will fist your pussy', 'I was predicting.', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed', 'I do not need Support items', 'I am not drunk', 'Alessaaaaaaaaa', 'Guys, your BOT is MID!!!', 'DO NOT FARM MY MINIONS!!!!', 'DO NOT PUSH MY LANEEE!!!', 'I just woke up', 'HE IS FULL LIFE!!!'];
 
 client.on('ready', async () => {
@@ -16,7 +18,6 @@ if (messages.content === "!dog") {
     let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
     console.log(message);
     //console.log(messages.guild.iconURL);
-    console.log(client.user.displayAvatarURL);
      if(!{message}) return messages.channel.send("I am a little broken Tommy. Try again.")
        let embed = new RichEmbed()
         .setColor(colors.pink)
@@ -27,18 +28,18 @@ if (messages.content === "!dog") {
 
     messages.channel.send(embed);
     msg.delete(); 
-    console.log(messages.guild);
 }
+
 if (messages.content === "!cat") {
     let msg = await messages.channel.send("Generating a cat meme for all you Tommy's followers");
     
-    let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
-    console.log(message);
-     if(!{message}) return messages.channel.send("I am a little broken Tommy. Try again.")
+    //let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
+    //console.log(message);
+    // if(!{message}) return messages.channel.send("I am a little broken Tommy. Try again.")
        let embed = new RichEmbed()
         .setColor(colors.pink)
         .setAuthor('Tommy loves Cats', client.user.displayAvatarURL)
-        .setImage(message)
+        .setImage(PexelsAPI.getCuratedPhotos(1,3));
         .setTimestamp()
         .setFooter(`The best of Tommy`, client.user.displayAvatarURL)
 
