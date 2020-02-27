@@ -36,7 +36,7 @@ if (messages.content === "!cat") {
         .setAuthor('Tommy loves Cats', messages.guild.iconURL)
         .setImage(message)
         .setTimestamp()
-        .setFooter(`The best of Tommy`, null)
+        .setFooter(`The best of Tommy`, bot.user.displayAvatarURL)
 
     messages.channel.send(embed);
     msg.delete(); 
