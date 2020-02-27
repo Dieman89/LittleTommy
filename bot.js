@@ -19,7 +19,6 @@ if (message.content === "!cat") {
     if(!{body}) return message.channel.send("I am a little broken Tommy. Try again.")
         let cEmbed = new Discord.RichEmbed()
         .setColor(colors.pink)
-        .setAuthor(`TestBot CATS!`, message.guild.iconURL)
         .setImage(body.url)
         .setTimestamp()
         .setFooter(`TestBot`, bot.user.displayAvatarURL);
