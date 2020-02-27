@@ -13,7 +13,7 @@ if (messages.content === "!cat") {
     let msg = await messages.channel.send("Generating a cat meme for all you Tommy's followers");
     
     let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
-    console.log({message});
+    console.log(message);
     if(!{message}) return message.channel.send("I am a little broken Tommy. Try again.")
        let embed = new RichEmbed()
         .setColor(colors.pink)
