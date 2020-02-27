@@ -14,13 +14,13 @@ if (messages.content === "!cat") {
     
     let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
     console.log(message);
-    if(!{message}) return message.channel.send("I am a little broken Tommy. Try again.")
+    // if(!{message}) return message.channel.send("I am a little broken Tommy. Try again.")
        let embed = new RichEmbed()
         .setColor(colors.pink)
         .setImage(message)
         .setTimestamp()
-        message.channel.send(message);
-        msg.delete(); 
+    message.channel.send(message);
+    msg.delete(); 
 }
 });
 
