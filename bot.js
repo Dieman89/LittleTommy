@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
-const Canvas = require('canvas');
-const superagent = require('superagent');
+const fetch = require('node-fetch');
 const colors = require('./colors.json');
 const client = new Discord.Client();
 const messages = ['Che schifo di champ', 'Snipered!', 'We need to do fucking JAVA COURSEWORK', 'I will fist your pussy', 'I was predicting.', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed', 'I do not need Support items', 'I am not drunk', 'Alessaaaaaaaaa', 'Guys, your BOT is MID!!!', 'DO NOT FARM MY MINIONS!!!!', 'DO NOT PUSH MY LANEEE!!!', 'I just woke up', 'HE IS FULL LIFE!!!'];
@@ -13,13 +12,12 @@ client.on('message', async message => {
 if (message.content === "!cat") {
     let msg = await message.channel.send("Generating a cat meme for all you Tommy's followers");
     
-    let {body} = await superagent
-    .get(`https://api.thecatapi.com/v1/images/search`);
-    console.log(body.url);
-    if(!{body}) return message.channel.send("I am a little broken Tommy. Try again.")
+    let { url } = await fetch('https://api.thecatapi.com/v1/images/search').then(response => response.json());
+    console.log(url);
+    if(!{url}) return message.channel.send("I am a little broken Tommy. Try again.")
         let cEmbed = new Discord.RichEmbed()
         .setColor(colors.pink)
-        .setImage(body.url)
+        .setImage(url)
         .setTimestamp()
         message.chat.send({embed: cEmbed});
         msg.delete();
