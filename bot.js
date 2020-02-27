@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const Canvas = require('canvas');
 const superagent = require('superagent');
-const colours = require('./colours.json');
+const colors = require('./colors.json');
 const client = new Discord.Client();
 const messages = ['Che schifo di champ', 'Snipered!', 'We need to do fucking JAVA COURSEWORK', 'I will fist your pussy', 'I was predicting.', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed', 'I do not need Support items', 'I am not drunk', 'Alessaaaaaaaaa', 'Guys, your BOT is MID!!!', 'DO NOT FARM MY MINIONS!!!!', 'DO NOT PUSH MY LANEEE!!!', 'I just woke up', 'HE IS FULL LIFE!!!'];
 
@@ -18,7 +18,7 @@ if (message === "!cat") {
     console.log(body.file);
     if(!{body}) return message.channel.send("I am a little broken Tommy. Try again.")
         let cEmbed = new Discord.RichEmbed()
-        .setColor(colours.cyan)
+        .setColor(colors.pink)
         .setAuthor(`TestBot CATS!`, message.guild.iconURL)
         .setImage(body.file)
         .setTimestamp()
