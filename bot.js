@@ -24,7 +24,7 @@ if (message === "!cat") {
         .setTimestamp()
         .setFooter(`TestBot`, bot.user.displayAvatarURL)
         message.chat.send({embed: cEmbed});
-        msg.delete();
+        
 }
 });
 
