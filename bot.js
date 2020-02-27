@@ -15,7 +15,7 @@ if (messages.content === "!dog") {
     
     let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
     console.log(message);
-    console.log(messages.guild.iconURL);
+    //console.log(messages.guild.iconURL);
     console.log(client.user.displayAvatarURL);
      if(!{message}) return messages.channel.send("I am a little broken Tommy. Try again.")
        let embed = new RichEmbed()
