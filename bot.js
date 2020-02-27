@@ -20,7 +20,6 @@ client.on('message', async messages => {
     
     let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
     console.log(message);
-    //console.log(messages.guild.iconURL);
      if(!{message}) return messages.channel.send("I am a little broken Tommy. Try again.")
        let embed = new RichEmbed()
         .setColor(colors.pink)
@@ -48,7 +47,7 @@ if (messages.content === "!urban") {
 
     const [answer] = list;
 
-    const embed = new Discord.MessageEmbed()
+    const embed = new client.MessageEmbed()
         .setColor('#EFFF00')
         .setTitle("Tommy the Wise on: " + answer.word)
         .setURL(answer.permalink)
