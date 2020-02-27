@@ -3,8 +3,6 @@ const fetch = require('node-fetch');
 const colors = require('./colors.json');
 const client = new Client();
 const querystring = require('querystring');
-
-var pexelsClient = new PexelsAPI("563492ad6f917000010000014c453ac665ac4258ad59547da9786552")
 const quotes = ['Che schifo di champ', 'Snipered!', 'We need to do fucking JAVA COURSEWORK', 'I will fist your pussy', 'I was predicting.', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed', 'I do not need Support items', 'I am not drunk', 'Alessaaaaaaaaa', 'Guys, your BOT is MID!!!', 'DO NOT FARM MY MINIONS!!!!', 'DO NOT PUSH MY LANEEE!!!', 'I just woke up', 'HE IS FULL LIFE!!!'];
 
 client.on('ready', async () => {
