@@ -39,7 +39,7 @@ if (messages.content === "!cat") {
        let embed = new RichEmbed()
         .setColor(colors.pink)
         .setAuthor('Tommy loves Cats', client.user.displayAvatarURL)
-        .setImage(PexelsAPI.getCuratedPhotos(1,3));
+        .setImage(PexelsAPI.getCuratedPhotos(1,3))
         .setTimestamp()
         .setFooter(`The best of Tommy`, client.user.displayAvatarURL)
 
