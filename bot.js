@@ -6,6 +6,7 @@ const quotes = ['Che schifo di champ', 'Snipered!', 'We need to do fucking JAVA 
 
 client.on('ready', () => {
     console.log('I am ready!');
+    client.user.setActivity("Best MID", {type: "FEEDING", url:"https://tommyisbad.eu"})
 });
 
 client.on('message', async messages => {
