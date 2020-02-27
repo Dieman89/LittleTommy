@@ -47,7 +47,7 @@ if (messages.content === "!urban") {
 
     const [answer] = list;
 
-    const embed = new MessageEmbed()
+    const embed = new Client.MessageEmbed()
         .setColor('#EFFF00')
         .setTitle("Tommy the Wise on: " + answer.word)
         .setURL(answer.permalink)
