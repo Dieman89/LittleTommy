@@ -9,7 +9,7 @@ client.on('ready', () => {
 });
 
 client.on('message', async messages => {
-if (messages.content === "!cat") {
+if (messages.content === "!dog") {
     let msg = await messages.channel.send("Generating a cat meme for all you Tommy's followers");
     
     let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
@@ -19,7 +19,7 @@ if (messages.content === "!cat") {
         .setColor(colors.pink)
         .setImage(message)
         .setTimestamp()
-    messages.channel.send(message);
+    messages.channel.send(embed);
     msg.delete(); 
 }
 });
