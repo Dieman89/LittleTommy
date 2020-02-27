@@ -2,7 +2,8 @@ const { Client, RichEmbed } = require('discord.js');
 const fetch = require('node-fetch');
 const colors = require('./colors.json');
 const client = new Client();
-const PexelsAPI = require('pexels-api-wrapper');
+const querystring = require('querystring');
+
 var pexelsClient = new PexelsAPI("563492ad6f917000010000014c453ac665ac4258ad59547da9786552")
 const quotes = ['Che schifo di champ', 'Snipered!', 'We need to do fucking JAVA COURSEWORK', 'I will fist your pussy', 'I was predicting.', 'Oid', 'Amir, you are so fucking shit', 'I am good with Zed', 'I do not need Support items', 'I am not drunk', 'Alessaaaaaaaaa', 'Guys, your BOT is MID!!!', 'DO NOT FARM MY MINIONS!!!!', 'DO NOT PUSH MY LANEEE!!!', 'I just woke up', 'HE IS FULL LIFE!!!'];
 
@@ -27,26 +28,6 @@ client.on('message', async messages => {
         .setColor(colors.pink)
         .setAuthor('Tommy loves Dogs', client.user.displayAvatarURL)
         .setImage(message)
-        .setTimestamp()
-        .setFooter(`The best of Tommy`, client.user.displayAvatarURL)
-
-    messages.channel.send(embed);
-    msg.delete(); 
-}
-
-if (messages.content === "!cat") {
-    let msg = await messages.channel.send("Generating a cat meme for all you Tommy's followers");
-    
-    //let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
-    //console.log(message);
-    // if(!{message}) return messages.channel.send("I am a little broken Tommy. Try again.")
-    pexelsClient.getCuratedPhotos(1,10).then(function(result) {
-console.log(result);
-    });
-       let embed = new RichEmbed()
-        .setColor(colors.pink)
-        .setAuthor('Tommy loves Cats', client.user.displayAvatarURL)
-       // .setImage()
         .setTimestamp()
         .setFooter(`The best of Tommy`, client.user.displayAvatarURL)
 
