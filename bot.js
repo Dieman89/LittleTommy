@@ -15,6 +15,7 @@ const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : s
 
 client.on('message', async messages => {
     const args = messages.content.slice(prefix.length).split(/ +/);
+    
     if (messages.content === "!dog") {
     let msg = await messages.channel.send("Generating a dog meme for all you Tommy's followers");
     
