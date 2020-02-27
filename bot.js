@@ -1,4 +1,4 @@
-const { Client, RichEmbed } = require('discord.js');
+const { Discord, Client, RichEmbed } = require('discord.js');
 const fetch = require('node-fetch');
 const colors = require('./colors.json');
 const client = new Client();
@@ -47,7 +47,7 @@ if (messages.content === "!urban") {
 
     const [answer] = list;
 
-    const embed = new Client.MessageEmbed()
+    const embed = new Discord.MessageEmbed()
         .setColor('#EFFF00')
         .setTitle("Tommy the Wise on: " + answer.word)
         .setURL(answer.permalink)
