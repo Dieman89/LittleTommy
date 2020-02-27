@@ -27,6 +27,7 @@ client.on('message', async messages => {
     messages.channel.send(embed);
     msg.delete(); 
 }
+});
 
 client.on('message', message => {
     if (message.content === "!quote") {
