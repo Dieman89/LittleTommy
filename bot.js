@@ -11,6 +11,8 @@ client.on('ready', async () => {
     client.user.setActivity("Best MID", {type: "FEEDING", url:"https://tommyisbad.eu"});
 });
 
+const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : str);
+
 client.on('message', async messages => {
 if (messages.content === "!dog") {
     let msg = await messages.channel.send("Generating a dog meme for all you Tommy's followers");
@@ -48,6 +50,33 @@ console.log(result);
 
     messages.channel.send(embed);
     msg.delete(); 
+}
+
+if (messages.content === "!urban") {
+    if (!args.length) {
+        return messages.channel.send('You need to supply a search term!');
+    }
+
+    const query = querystring.stringify({ term: args.join(' ') });
+
+    const { list } = await fetch(`https://api.urbandictionary.com/v0/define?${query}`).then(response => response.json());
+
+    if (!list.length) {
+        return messages.channel.send(`No results found for **${args.join(' ')}**.`);
+    }
+
+    const [answer] = list;
+
+    const embed = new Discord.MessageEmbed()
+        .setColor('#EFFF00')
+        .setTitle("Tommy the Wise on: " + answer.word)
+        .setURL(answer.permalink)
+        .addFields(
+            { name: 'Definition', value: trim(answer.definition, 1024) },
+            { name: 'Example', value: trim(answer.example, 1024) },
+            { name: 'Rating', value: `${answer.thumbs_up} thumbs up. ${answer.thumbs_down} thumbs down.` },
+        );
+    messages.channel.send(embed);
 }
 });
 
