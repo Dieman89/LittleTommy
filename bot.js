@@ -15,11 +15,11 @@ if (message.content === "!cat") {
     let { test } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
     console.log(test);
     if(!{test}) return message.channel.send("I am a little broken Tommy. Try again.")
-        let cEmbed = new Discord.RichEmbed()
+        let embed = new RichEmbed()
         .setColor(colors.pink)
         .setImage(test)
         .setTimestamp()
-        message.chat.send({embed: cEmbed});
+        message.channel.send(embed);
         msg.delete();
 }
 });
