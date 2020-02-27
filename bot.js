@@ -1,4 +1,4 @@
-const { client, RichEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 const fetch = require('node-fetch');
 const colors = require('./colors.json');
 const client = new Discord.Client();
