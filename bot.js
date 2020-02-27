@@ -8,9 +8,9 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-client.on('message', async message => {
-if (message.content === "!cat") {
-    let msg = await message.channel.send("Generating a cat meme for all you Tommy's followers");
+client.on('message', async messages => {
+if (messages.content === "!cat") {
+    let msg = await messages.channel.send("Generating a cat meme for all you Tommy's followers");
     
     let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
     console.log({message});
