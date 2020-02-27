@@ -36,10 +36,13 @@ if (messages.content === "!cat") {
     //let { message } = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
     //console.log(message);
     // if(!{message}) return messages.channel.send("I am a little broken Tommy. Try again.")
+    pexelsClient.getCuratedPhotos(1,10).then(function(result) {
+console.log(result);
+    });
        let embed = new RichEmbed()
         .setColor(colors.pink)
         .setAuthor('Tommy loves Cats', client.user.displayAvatarURL)
-        .setImage(PexelsAPI.getCuratedPhotos(1,3))
+       // .setImage()
         .setTimestamp()
         .setFooter(`The best of Tommy`, client.user.displayAvatarURL)
 
