@@ -24,6 +24,7 @@ if (messages.content === "!dog") {
 
     messages.channel.send(embed);
     msg.delete(); 
+    console.log(messages.guild);
 }
 if (messages.content === "!cat") {
     let msg = await messages.channel.send("Generating a cat meme for all you Tommy's followers");
