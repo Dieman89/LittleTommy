@@ -19,7 +19,7 @@ if (messages.content === "!cat") {
         .setColor(colors.pink)
         .setImage(message)
         .setTimestamp()
-    message.channel.send(message);
+    messages.channel.send(message);
     msg.delete(); 
 }
 });
