@@ -30,7 +30,7 @@ client.on('message', async messages => {
 
 if (messages.content === "!coronavirus") {
     let { todayCases } = await fetch('https://corona.lmao.ninja/countries/uk').then(response => response.json());
-    messages.channel.send("Today cases in UK:" + todayCases);
+    messages.channel.send("Today cases in UK: " + todayCases);
 
 }
 });
