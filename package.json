@@ -9,7 +9,7 @@
   "dependencies": {
     "canvas": "^2.6.1",
     "discord.js": "^11.5.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "pexels-api-wrapper": "^1.1.1",
     "request": "2.88.2"
   },
