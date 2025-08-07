@@ -7,7 +7,7 @@
     "start": "node bot.js"
   },
   "dependencies": {
-    "canvas": "^2.6.1",
+    "canvas": "^3.0.0",
     "discord.js": "^13.14.0",
     "node-fetch": "^3.2.10",
     "pexels-api-wrapper": "^1.1.1",
